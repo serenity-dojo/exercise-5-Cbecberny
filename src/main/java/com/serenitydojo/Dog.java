@@ -1,17 +1,16 @@
 package com.serenitydojo;
 
-public class Dog {
-    private String name;
+public class Dog extends Pet {
     private String favoriteToy;
     private int age;
     private boolean isFed = false;
+    private String name;
 
     public static final String DOG_NOISE = "Woof";
 
     public Dog(String name, String favoriteToy, int age) {
-        this.name = name;
+        super(name, age);
         this.favoriteToy = favoriteToy;
-        this.age = age;
     }
 
     public String getName() {
@@ -44,6 +43,11 @@ public class Dog {
 
     // Exercise 4
     public String makeNoise() {return DOG_NOISE;}
+
+    @Override
+    public String play() {
+        return "plays with bone";
+    }
 
     public void feed() {
         this.isFed = true;
